@@ -1,5 +1,5 @@
 import os
-impoer requests
+import requests
 import zipfile
 from pathlib import Path
 
@@ -18,10 +18,10 @@ else:
 with open(data_path / "pizza_steak_sushi.zip", "wb") as f:
     request = requests.get("https://github.com/mrdbourke/pytorch-deep-learning/raw/main/data/pizza_steak_sushi.zip")
     print("Downloading pizza, steak, sushi data...")
-    f.write(request.content
+    f.write(request.content)
 
 # Unzip pizza, sushi data
-with zipfile.ZipFile(data_path / "pizza_steak_sushi.zip", r) as zip_ref:
+with zipfile.ZipFile(data_path / "pizza_steak_sushi.zip", "r") as zip_ref:
             print("Unzipping pizza, steak, sushi data...")
             zip_ref.extractall(image_path)
 
